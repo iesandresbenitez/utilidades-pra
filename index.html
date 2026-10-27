@@ -1,613 +1,381 @@
-
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#102b46">
-<title>Generador PRA · IES Andrés Benítez</title>
+<title>Generador PRA · Andalucía</title>
 <style>
 :root{
-  --navy:#4b1f2b;
-  --blue:#7a2d40;
-  --orange:#d8b98b;
-  --paper:#f3e7d5;
-  --ink:#38242a;
-  --muted:#8a716a;
-  --line:#e5cfb3;
-  --white:#fffcf8;
-  --green:#356b55;
+  --wine:#702B3A;--dark:#4A1D29;--rose:#8E4A56;
+  --beige:#F3E8D7;--sand:#E1CFB5;--gold:#C49A6C;
+  --ivory:#FFFCF7;--ink:#35252A;--muted:#806E68;
+  --line:#E1CFB5;--shadow:0 8px 28px rgba(74,29,41,.07);
 }
 *{box-sizing:border-box}
+html{min-height:100%;background:var(--beige)}
 body{
-  margin:0;background:var(--paper);color:var(--ink);
-  font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif
+  margin:0;min-height:100vh;background:var(--beige);color:var(--ink);
+  font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif
 }
 header{
-  background:var(--white);color:var(--navy);
-  padding:18px 20px;border-bottom:1px solid var(--line)
+  background:var(--ivory);color:var(--dark);padding:0 0 22px;
+  border-bottom:1px solid var(--sand)
 }
-.wrap{max-width:1200px;margin:auto;padding:0 18px}
-header .wrap{padding:0 18px}
-.brandbar{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.brandbar{
+  min-height:72px;display:flex;align-items:center;gap:16px;
+  padding-top:12px;padding-bottom:12px
+}
 .brandmark{
-  width:60px;height:60px;border-radius:18px;background:#702a3a;
-  color:white;display:grid;place-items:center;font-weight:900;
-  font-size:1.6rem;font-family:Georgia,serif
+  width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;
+  border-radius:13px;background:var(--wine);color:#fff;font-weight:850;font-size:12px
 }
-.brandcopy{flex:1}
-.brandname{font-weight:850;font-size:1.1rem;letter-spacing:-.03em}
-.branddesc{color:var(--muted);font-size:.92rem}
-.brandnav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.brandnav span{
-  padding:10px 13px;border-radius:12px;font-weight:700;color:var(--muted)
+.brandcopy{min-width:0;margin-right:auto}
+.brandname{font-size:16px;font-weight:850;letter-spacing:-.35px;color:var(--dark)}
+.branddesc{font-size:12px;color:var(--muted)}
+.topnav{display:flex;align-items:center;gap:5px}
+.topnav span{
+  padding:10px 13px;border-radius:11px;color:var(--muted);
+  font-weight:700;font-size:14px;white-space:nowrap
 }
-.brandnav .active{background:var(--paper);color:var(--blue)}
-main{padding:32px 0 45px}
+.topnav .active{background:var(--beige);color:var(--wine)}
 .eyebrow{
   text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;
-  font-weight:800;color:var(--blue)
+  font-weight:850;color:#9A6A4C;margin-top:8px
 }
-h1{
-  font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1;
-  margin:8px 0;color:var(--navy);letter-spacing:-.04em
-}
-.intro{color:var(--muted);max-width:800px;margin:10px 0 24px}
+h1{font-size:clamp(1.8rem,4vw,2.55rem);line-height:1.12;margin:8px 0;color:var(--dark);letter-spacing:-.04em}
+header p{max-width:780px;color:var(--muted);margin:10px 0 0}
+main{padding-top:24px;padding-bottom:44px}
 .notice{
-  background:#fff8e9;border:1px solid #f2d49b;border-left:5px solid var(--orange);
-  padding:13px 15px;border-radius:10px;margin-bottom:20px;font-size:.92rem
+  background:#FFF8E9;border:1px solid #F0D8AA;border-left:4px solid var(--gold);
+  padding:13px 15px;border-radius:12px;margin-bottom:20px;font-size:.9rem
 }
-.layout{
-  display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);
-  gap:22px;align-items:start
-}
+.layout{display:grid;grid-template-columns:minmax(300px,.9fr) minmax(0,1.1fr);gap:20px;align-items:start}
 .panel{
-  background:var(--white);border:1px solid var(--line);border-radius:20px;
-  padding:22px;box-shadow:0 8px 28px #4b1f2b0b
+  min-width:0;background:var(--ivory);border:1px solid var(--sand);
+  border-radius:18px;padding:21px;box-shadow:var(--shadow)
 }
-h2{font-size:1.2rem;margin:0 0 5px;color:var(--navy)}
+h2{font-size:1.16rem;margin:0 0 5px;color:var(--dark)}
 .sub{margin:0 0 16px;color:var(--muted);font-size:.9rem}
-label{display:block;font-weight:700;font-size:.9rem;margin:13px 0 6px}
+label{display:block;font-weight:750;font-size:.9rem;margin:13px 0 6px}
 select,input[type=text],textarea{
-  font:inherit;width:100%;border:1px solid #ddc5a8;border-radius:12px;
-  padding:11px 12px;background:var(--white);color:var(--ink)
+  display:block;width:100%;max-width:100%;font:inherit;color:var(--ink);
+  border:1px solid var(--sand);border-radius:11px;padding:10px 12px;background:#fffdfa
 }
-select:focus,input:focus,textarea:focus{
-  outline:3px solid #7a2d4024;border-color:var(--blue)
-}
-.category{border-top:1px solid var(--line);padding:14px 0 2px}
-.category h3{font-size:.96rem;margin:0 0 8px;color:var(--navy)}
-.check{
-  display:flex;gap:9px;align-items:flex-start;margin:9px 0;
-  font-weight:450;font-size:.91rem
-}
-.check input{
-  margin-top:5px;accent-color:var(--blue);width:16px;height:16px;flex-shrink:0
-}
+select:focus,input:focus,textarea:focus{outline:3px solid rgba(196,154,108,.25);border-color:var(--gold)}
+.category{border-top:1px solid #eadcc9;padding:13px 0 2px}
+.category h3{font-size:.95rem;margin:0 0 8px;color:var(--dark)}
+.check{display:flex;gap:9px;align-items:flex-start;margin:8px 0;font-weight:450;font-size:.9rem}
+.check input{margin-top:5px;accent-color:var(--wine);width:16px;height:16px;flex-shrink:0}
 .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
 button{
-  border:0;border-radius:11px;padding:11px 15px;font:700 .91rem system-ui;
-  cursor:pointer;background:var(--blue);color:white;transition:filter .15s
+  border:0;border-radius:10px;padding:10px 14px;font:750 .9rem system-ui;
+  cursor:pointer;background:var(--wine);color:white
 }
-button:hover{filter:brightness(.93)}
-button.secondary{background:#efe1ce;color:#4b1f2b}
-button.outline{background:white;color:var(--blue);border:1px solid #d7b4b9}
-button:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
-.selected{font-size:.85rem;color:var(--muted);margin-top:9px}
-.field{
-  border:1px solid var(--line);border-radius:14px;padding:15px;
-  margin-top:13px;background:var(--white)
-}
-.fieldhead{
-  display:flex;align-items:flex-start;justify-content:space-between;gap:10px
-}
-.field h3{font-size:.97rem;color:var(--navy);margin:0}
-.field p{color:var(--muted);font-size:.82rem;margin:3px 0 8px}
-.field textarea{
-  min-height:145px;resize:vertical;font-size:.92rem;line-height:1.55
-}
-.smallbtn{padding:8px 11px;font-size:.82rem;white-space:nowrap}
-.empty{
-  border:1px dashed #c4b09c;border-radius:14px;padding:25px;
-  text-align:center;color:var(--muted);margin-top:12px
-}
+button:hover{filter:brightness(.95)}
+button.secondary{background:var(--beige);color:var(--dark)}
+button.outline{background:var(--ivory);color:var(--wine);border:1px solid var(--sand)}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.selected{font-size:.84rem;color:var(--muted);margin-top:9px}
+.field{border:1px solid var(--sand);border-radius:13px;padding:14px;margin-top:12px;background:#fffdfa}
+.fieldhead{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.field h3{font-size:.96rem;color:var(--dark);margin:0}
+.field p{color:var(--muted);font-size:.8rem;margin:3px 0 8px}
+.field textarea{min-height:142px;resize:vertical;font-size:.91rem;line-height:1.55;background:#fff}
+.smallbtn{padding:7px 10px;font-size:.8rem;white-space:nowrap}
+.empty{border:1px dashed #d7c3a9;border-radius:12px;padding:22px;text-align:center;color:var(--muted);margin-top:12px}
 footer{
-  background:var(--white);border-top:1px solid var(--line);
-  color:var(--muted);font-size:.84rem;padding:20px 0;text-align:center
+  background:var(--ivory);color:var(--muted);font-size:.82rem;
+  padding:20px 0 24px;border-top:1px solid var(--sand);text-align:center
 }
-.footer-title{font-weight:750;color:var(--navy);margin-bottom:4px}
-.pill{
-  display:inline-block;background:#efe1ce;color:#702a3a;
-  border-radius:999px;padding:5px 10px;font-size:.76rem;font-weight:800
-}
-.status{min-height:1.4em;color:var(--green);font-size:.85rem;margin-top:9px}
+footer .footer-title{color:var(--dark);font-weight:800;margin-bottom:4px}
+.status{min-height:1.3em;color:#356b55;font-size:.85rem;margin-top:8px}
 @media(max-width:900px){
   .layout{grid-template-columns:1fr}
   .panel{padding:17px}
-  .brandnav{width:100%;gap:2px}
-  .brandnav span{padding:8px 10px}
 }
-@media(max-width:500px){
-  .wrap{padding:0 12px}
-  header{padding:14px 8px}
-  .brandmark{width:48px;height:48px;border-radius:14px}
-  .brandname{font-size:1rem}
-  .branddesc{font-size:.82rem}
+@media(max-width:650px){
+  .wrap{padding-left:14px;padding-right:14px}
+  .brandbar{flex-wrap:wrap;gap:10px;padding-top:12px;padding-bottom:10px}
+  .brandcopy{flex:1}
+  .topnav{width:100%;overflow-x:auto}
+  .topnav span{padding:8px 10px;font-size:13px}
+  header .wrap[style]{padding-top:12px!important}
+  main{padding-top:16px}
   .fieldhead{flex-direction:column}
   .smallbtn{align-self:flex-start}
   .actions button{flex:1}
 }
+
+/* Sistema visual compartido de las aplicaciones del IES Andrés Benítez */
+body{background:var(--beige)!important;color:var(--ink)}
+header{background:var(--beige)!important;border:0!important;padding:0 0 2px!important}
+header .brandbar{
+  max-width:none!important;width:100%!important;min-height:70px!important;
+  padding:12px max(24px,calc((100% - 1152px)/2))!important;
+  background:var(--ivory)!important;border-bottom:1px solid var(--sand);
+  display:flex;align-items:center;gap:16px
+}
+header .brandmark{width:42px!important;height:42px!important;flex:0 0 42px!important;border-radius:13px!important;background:var(--wine)!important;color:#fff!important}
+header .brandname{font-size:16px!important;font-weight:850!important;color:var(--dark)!important}
+header .branddesc{font-size:12px!important;color:var(--muted)!important}
+header .topnav{display:flex!important;align-items:center;gap:5px}
+header .topnav span{padding:10px 13px!important;border-radius:11px!important;font-size:14px!important;font-weight:700!important;color:var(--muted)!important}
+header .topnav .active{background:var(--beige)!important;color:var(--wine)!important}
+header > .wrap:not(.brandbar){
+  max-width:1152px!important;width:calc(100% - 48px)!important;
+  margin:22px auto 24px!important;padding:25px 30px!important;
+  border-radius:20px!important;background:var(--wine)!important;color:var(--ivory)!important;
+  box-shadow:0 10px 26px rgba(74,29,41,.10)
+}
+header > .wrap:not(.brandbar) .eyebrow{color:#E8C99F!important;margin-top:0!important}
+header > .wrap:not(.brandbar) h1{color:var(--ivory)!important;margin:7px 0 8px!important}
+header > .wrap:not(.brandbar) p{color:#F3E8D7!important;margin:0!important;max-width:780px}
+main.wrap{max-width:1200px!important;padding:0 24px 42px!important;margin:0 auto!important}
+.notice{background:#FFF8E9!important;border-color:#E9D3AD!important;border-left-color:var(--gold)!important}
+.panel{background:var(--ivory)!important;border-color:var(--sand)!important;border-radius:18px!important;box-shadow:var(--shadow)!important}
+.panel h2,.category h3,.field h3{color:var(--dark)!important}
+button{background:var(--wine)!important;color:#fff!important;border-radius:10px!important}
+button.secondary{background:var(--beige)!important;color:var(--wine)!important}
+button.outline{background:var(--ivory)!important;color:var(--wine)!important;border-color:var(--sand)!important}
+input[type=text],select,textarea{background:#fffdfa!important;border-color:var(--sand)!important;color:var(--ink)!important}
+.check input{accent-color:var(--wine)!important}
+.field{background:#fffdfa!important;border-color:var(--sand)!important;border-radius:13px!important}
+footer{max-width:none!important;width:100%!important;margin:0!important;padding:22px 0 24px!important;background:var(--ivory)!important;border-top:1px solid var(--sand)!important;color:var(--muted)!important}
+footer .wrap{max-width:1152px!important;margin:0 auto!important;padding:0 24px!important}
+footer .footer-title{color:var(--dark)!important}
+@media(max-width:760px){
+ header .brandbar{padding:12px 16px!important;gap:10px!important;flex-wrap:wrap}
+ header .brandcopy{flex:1}
+ header .topnav{order:3;width:100%;overflow-x:auto}
+ header .topnav span{white-space:nowrap;flex:0 0 auto}
+ header > .wrap:not(.brandbar){width:calc(100% - 28px)!important;margin:14px auto 18px!important;padding:21px 19px!important;border-radius:16px!important}
+ main.wrap{padding:0 14px 30px!important}
+ footer .wrap{padding:0 14px!important}
+}
+
+
+header .topnav .nav-guide{
+  appearance:none;border:0;background:transparent;color:var(--muted);
+  padding:10px 13px;border-radius:11px;font:700 14px/1.2 inherit;
+  cursor:pointer;white-space:nowrap
+}
+header .topnav .nav-guide:hover{background:var(--beige);color:var(--wine)}
+header .topnav .nav-guide:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+#guideDialog{width:min(680px,calc(100% - 28px));max-height:85vh;overflow:auto;border:1px solid var(--sand);border-radius:18px;padding:0;background:var(--ivory);color:var(--ink);box-shadow:0 24px 80px rgba(74,29,41,.25)}
+#guideDialog::backdrop{background:rgba(53,37,42,.48);backdrop-filter:blur(2px)}
+.guide-modal{padding:24px}
+.guide-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;border-bottom:1px solid var(--sand);padding-bottom:14px;margin-bottom:14px}
+.guide-head h2{margin:4px 0 0}
+.guide-steps{padding-left:23px}
+.guide-steps li{padding:0 0 11px 4px}
+.guide-warning{background:#fff8e9;border-left:4px solid var(--gold);border-radius:8px;padding:12px;margin:8px 0 0;font-size:.9rem}
+@media(max-width:500px){.guide-modal{padding:17px}.guide-head{flex-direction:column}.guide-head button{align-self:flex-end}}
 @media print{
-  body{background:white}
-  .no-print,header .brandnav,.notice,footer .footer-title{display:none!important}
-  .layout{display:block}
-  .panel{box-shadow:none;border:0;padding:0;margin-bottom:15px}
-  .field{break-inside:avoid;border:1px solid #ddd}
-  .field textarea{
-    border:0;padding:0;min-height:0;height:auto;overflow:visible;
-    resize:none;background:white
-  }
-  .field button{display:none}
-  header{background:white;padding:0 0 10px;border-bottom:2px solid #702a3a}
-  main{padding-top:10px}
-  footer{padding-top:10px}
+  @page{size:A4;margin:14mm}
+  html,body{background:#fff!important;color:#222!important;min-height:0!important;overflow:visible!important}
+  body{font-size:10pt;line-height:1.4}
+  header{background:#fff!important;padding:0 0 7mm!important;border-bottom:1px solid #bbb}
+  .brandbar{min-height:0!important;padding:0 0 4mm!important}
+  .brandmark,.topnav,.no-print,.notice{display:none!important}
+  .brandname{font-size:13pt;color:#702B3A!important}
+  .branddesc{font-size:8.5pt}
+  .wrap{max-width:none!important;width:100%!important;padding:0!important;margin:0!important}
+  main{padding:6mm 0!important}
+  .layout{display:block!important}
+  .panel{display:block!important;overflow:visible!important;height:auto!important;max-height:none!important;box-shadow:none!important;border:0!important;border-radius:0!important;padding:0!important;margin:0 0 5mm!important;background:#fff!important}
+  #outputs{display:block!important;overflow:visible!important;height:auto!important;max-height:none!important}
+  .field{display:block!important;overflow:visible!important;height:auto!important;max-height:none!important;break-inside:auto!important;page-break-inside:auto!important;border:1px solid #ccc!important;border-radius:5px!important;padding:4mm!important;margin:0 0 4mm!important;background:#fff!important;box-shadow:none!important}
+  .fieldhead{display:block!important}
+  .field p{display:none!important}
+  .field textarea{display:block!important;width:100%!important;min-height:0!important;height:auto!important;max-height:none!important;overflow:visible!important;resize:none!important;border:0!important;padding:0!important;margin:0!important;background:#fff!important;color:#222!important;font:9.5pt/1.45 Arial,sans-serif!important;white-space:pre-wrap!important;overflow-wrap:anywhere!important}
+  .field button{display:none!important}
+  footer{background:#fff!important;color:#555!important;border-top:1px solid #ccc!important;padding:4mm 0 0!important;font-size:8pt!important}
 }
 </style>
 </head>
 <body>
-
 <header>
- <div class="wrap">
-  <div class="brandbar">
-   <div class="brandmark">A</div>
-   <div class="brandcopy">
-    <div class="brandname">IES Andrés Benítez</div>
-    <div class="branddesc">Recursos educativos · Generador PRA</div>
-   </div>
-   <nav class="brandnav" aria-label="Navegación">
-    <span class="active">Generador PRA</span>
-    <span>Atención a la diversidad</span>
-   </nav>
+ <div class="wrap brandbar">
+  <div class="brandmark" aria-hidden="true">PRA</div>
+  <div class="brandcopy">
+   <div class="brandname">IES Andrés Benítez</div>
+   <div class="branddesc">Generador de medidas · Programa de Refuerzo del Aprendizaje</div>
   </div>
+  <nav class="topnav" aria-label="Navegación">
+   <span class="active" aria-current="page">Generador PRA</span>
+   <button type="button" id="guideButton" class="nav-guide">Guía de uso</button>
+  </nav>
+ </div>
+ <div class="wrap" style="padding-top:22px">
+  <div class="eyebrow">Recurso docente · Andalucía</div>
+  <h1>Generador de medidas para el PRA</h1>
+  <p>Selecciona las necesidades observadas y prepara los campos para copiar en Séneca.</p>
  </div>
 </header>
-
 <main class="wrap">
- <div class="eyebrow">Herramienta para el profesorado</div>
- <h1>Generador de medidas para el PRA</h1>
- <p class="intro">
-  Selecciona las necesidades educativas observadas y prepara propuestas
-  editables para el apartado «Propuesta de otros aspectos a trabajar en el
-  programa» de Séneca.
- </p>
-
- <div class="notice">
-  <strong>Importante:</strong> esta aplicación es un recurso de apoyo docente,
-  no una herramienta oficial de Séneca. No introduce nombres ni datos
-  personales, no determina diagnósticos y no sustituye la evaluación
-  psicopedagógica ni las decisiones del equipo docente y de orientación.
-  Revisa y adapta todas las propuestas antes de incorporarlas al programa.
- </div>
-
+ <div class="notice"><strong>Importante:</strong> herramienta de apoyo docente, no oficial. No introduce datos personales ni determina diagnósticos. Revisa y adapta todas las propuestas a las necesidades observadas, las medidas autorizadas y la normativa vigente antes de incorporarlas a Séneca.</div>
  <div class="layout">
   <section class="panel no-print">
-   <h2>1. Configura la propuesta</h2>
-   <p class="sub">Combina varias necesidades. Selecciona únicamente las que correspondan al caso real.</p>
-
+   <h2>1. Configura la propuesta</h2><p class="sub">Puedes combinar varias necesidades. Selecciona solo las que correspondan al caso real.</p>
    <label for="stage">Etapa educativa</label>
-   <select id="stage">
-    <option value="ESO">Educación Secundaria Obligatoria</option>
-    <option value="Bachillerato">Bachillerato (revisar procedencia del programa)</option>
-   </select>
-
+   <select id="stage"><option value="ESO">Educación Secundaria Obligatoria</option><option value="Bachillerato">Bachillerato (revisar procedencia del programa)</option></select>
    <label for="subject">Materia o ámbito (opcional)</label>
    <input id="subject" type="text" placeholder="Ej.: Tecnología y Digitalización">
-
    <label for="context">Matiz docente opcional</label>
-   <textarea id="context" rows="3" placeholder="Ej.: comprende mejor con ejemplos visuales y necesita comprobar las instrucciones paso a paso. No incluyas nombres ni datos identificativos."></textarea>
-
+   <textarea id="context" rows="2" placeholder="Ej.: comprende mejor con ejemplos visuales y necesita comprobar las instrucciones paso a paso. No incluyas nombres ni datos identificativos."></textarea>
    <div id="categories"></div>
    <div class="selected" id="selectedCount">0 necesidades seleccionadas</div>
-
-   <div class="actions">
-    <button id="generate">Generar / actualizar campos</button>
-    <button class="secondary" id="clear">Limpiar selección</button>
-   </div>
+   <div class="actions"><button id="generate">Generar / actualizar campos</button><button class="secondary" id="clear">Limpiar selección</button></div>
   </section>
-
   <section class="panel">
-   <h2>2. Campos de Séneca</h2>
-   <p class="sub">Edita los textos generados y copia cada campo por separado o el bloque completo.</p>
-
-   <div class="actions no-print" style="margin-top:0">
-    <button id="copyAll">Copiar los cinco campos</button>
-    <button class="secondary" id="print">Imprimir / guardar PDF</button>
-   </div>
-
-   <div id="outputs">
-    <div class="empty">
-     Selecciona una o varias necesidades y pulsa
-     <strong>Generar / actualizar campos</strong>.
-    </div>
-   </div>
+   <h2>2. Campos de Séneca</h2><p class="sub">Los textos son editables. Copia cada campo por separado o todos juntos.</p>
+   <div class="actions no-print" style="margin-top:0"><button id="copyAll">Copiar los cinco campos</button><button class="secondary" id="print">Imprimir / guardar PDF</button></div>
+   <div id="outputs"><div class="empty">Selecciona una o varias necesidades y pulsa <strong>Generar / actualizar campos</strong>.</div></div>
    <div id="status" class="status" role="status" aria-live="polite"></div>
   </section>
  </div>
 </main>
 
-<footer>
- <div class="wrap">
-  <div class="footer-title">IES Andrés Benítez · Recursos educativos</div>
-  <div>Aplicación desarrollada en el marco del Proyecto STEAM 4.0 / Programa de Cooperación Territorial Código Escuela 4.0</div>
-  <div style="margin-top:8px">Recurso orientativo para uso profesional. Las medidas deben adecuarse a las necesidades documentadas y a la normativa vigente.</div>
- </div>
-</footer>
 
+<dialog id="guideDialog" aria-labelledby="guideTitle">
+ <div class="guide-modal">
+  <div class="guide-head">
+   <div>
+    <div class="eyebrow">Ayuda de la aplicación</div>
+    <h2 id="guideTitle">Guía de uso</h2>
+   </div>
+   <button type="button" id="closeGuide" class="secondary">Cerrar</button>
+  </div>
+  <ol class="guide-steps">
+   <li><strong>Selecciona la etapa educativa.</strong> El generador está orientado principalmente a ESO. Si eliges otra etapa, revisa la procedencia y adecuación del programa.</li>
+   <li><strong>Marca las necesidades observadas.</strong> Puedes combinar varias categorías. Selecciona únicamente las que estén justificadas en el caso real.</li>
+   <li><strong>Añade un matiz opcional.</strong> Describe brevemente apoyos que funcionen o barreras observadas. No incluyas nombres, iniciales ni datos que identifiquen al alumnado.</li>
+   <li><strong>Pulsa «Generar / actualizar campos».</strong> Se prepararán los cinco campos del apartado de Séneca. La materia es opcional y el texto generado debe revisarse y concretarse.</li>
+   <li><strong>Edita y copia.</strong> Puedes modificar cada campo, copiarlo individualmente o copiar los cinco juntos para trasladarlos a Séneca.</li>
+   <li><strong>Imprime o guarda en PDF.</strong> Usa el botón de impresión y selecciona «Guardar como PDF» en el diálogo del navegador. Comprueba el resultado antes de compartirlo.</li>
+  </ol>
+  <p class="guide-warning"><strong>Importante:</strong> esta aplicación no es oficial, no diagnostica ni sustituye las decisiones del equipo docente y de orientación. Las propuestas son orientativas y deben ajustarse a la normativa vigente y a las necesidades documentadas.</p>
+ </div>
+</dialog>
+
+<footer class="wrap">Aplicación desarrollada en el marco del Proyecto STEAM 4.0 / Programa de Cooperación Territorial Código Escuela 4.0.<br><br>Recurso orientativo para uso profesional. La selección de medidas debe respetar la evaluación del alumnado, las orientaciones del equipo docente y de orientación, y los procedimientos establecidos por la administración educativa.</footer>
 <script>
 const categories = [
  {title:"Aprendizaje y procesos cognitivos",items:[
-  ["comprehension","Comprensión de instrucciones y enunciados"],
-  ["reasoning","Razonamiento y resolución de problemas"],
-  ["consolidation","Consolidación y recuperación de aprendizajes"],
-  ["pace","Ritmo de aprendizaje y necesidad de práctica adicional"]
- ]},
+  ["comprehension","Comprensión de instrucciones y enunciados"],["reasoning","Razonamiento y resolución de problemas"],["consolidation","Consolidación y recuperación de aprendizajes"],["pace","Ritmo de aprendizaje y necesidad de práctica adicional"]]},
  {title:"Lectura, escritura y comunicación",items:[
-  ["reading","Comprensión lectora"],
-  ["writing","Expresión escrita"],
-  ["oral","Comprensión y expresión oral"],
-  ["vocabulary","Vocabulario y lenguaje académico"]
- ]},
+  ["reading","Comprensión lectora"],["writing","Expresión escrita"],["oral","Comprensión y expresión oral"],["vocabulary","Vocabulario y lenguaje académico"]]},
  {title:"Atención, autonomía y funciones ejecutivas",items:[
-  ["attention","Atención sostenida y concentración"],
-  ["organization","Organización, planificación y gestión del tiempo"],
-  ["autonomy","Autonomía para iniciar y completar tareas"],
-  ["steps","Seguimiento de instrucciones secuenciadas"]
- ]},
+  ["attention","Atención sostenida y concentración"],["organization","Organización, planificación y gestión del tiempo"],["autonomy","Autonomía para iniciar y completar tareas"],["steps","Seguimiento de instrucciones secuenciadas"]]},
  {title:"Acceso, participación y comunicación",items:[
-  ["visual","Necesidad de apoyos visuales o información accesible"],
-  ["auditory","Necesidad de apoyos para acceder a información oral"],
-  ["motor","Necesidad de ajustes de acceso o manipulación de materiales"],
-  ["communication","Necesidad de apoyos para la comunicación"]
- ]},
+  ["visual","Necesidad de apoyos visuales o información accesible"],["auditory","Necesidad de apoyos para acceder a información oral"],["motor","Necesidad de ajustes de acceso o manipulación de materiales"],["communication","Necesidad de apoyos para la comunicación"]]},
  {title:"Participación y trayectoria escolar",items:[
-  ["engagement","Implicación y persistencia en las tareas"],
-  ["attendance","Interrupciones en la asistencia o incorporación reciente"],
-  ["pending","Aprendizajes no adquiridos o materias pendientes"],
-  ["repeat","Consolidación de aprendizajes de cursos anteriores"]
- ]},
+  ["engagement","Implicación y persistencia en las tareas"],["attendance","Interrupciones en la asistencia o incorporación reciente"],["pending","Aprendizajes no adquiridos o materias pendientes"],["repeat","Consolidación de aprendizajes de cursos anteriores"]]},
  {title:"Otras necesidades observadas",items:[
-  ["structure","Necesidad de anticipación, estructura y apoyo en la participación"],
-  ["enrichment","Necesidad de enriquecimiento o profundización"],
-  ["other","Otras necesidades observadas por el equipo docente"]
- ]}
+  ["structure","Necesidad de anticipación, estructura y apoyo en la participación"],["enrichment","Necesidad de enriquecimiento o profundización"],["other","Otras necesidades observadas por el equipo docente"]]}
 ];
-
 const measureText = {
- comprehension:{
-  access:"Presentar las consignas de forma clara, directa y ordenada. Comprobar la comprensión antes de iniciar la tarea y acompañar las instrucciones verbales con ejemplos o apoyos visuales cuando resulten útiles.",
-  tasks:"Dividir las tareas complejas en pasos breves y numerados. Modelar un ejemplo inicial y comprobar la comprensión de cada fase antes de continuar.",
-  resources:"Utilizar guías de pasos, ejemplos resueltos, esquemas y glosarios de términos específicos cuando sean pertinentes."
- },
- reasoning:{
-  access:"Hacer explícitos los datos relevantes, el objetivo de la actividad y los pasos posibles para abordarla. Apoyar la explicación con representaciones gráficas o ejemplos contextualizados.",
-  tasks:"Proponer problemas graduados, con resolución guiada inicial y retirada progresiva de las ayudas. Incorporar actividades que permitan explicar el procedimiento seguido.",
-  resources:"Facilitar plantillas para organizar datos, esquemas de resolución, material manipulativo o herramientas digitales adecuadas a la tarea."
- },
- consolidation:{
-  access:"Activar conocimientos previos y relacionar los nuevos contenidos con ejemplos conocidos. Presentar la información esencial de manera organizada y recuperar las ideas clave durante la unidad.",
-  tasks:"Incluir actividades breves de repaso distribuido, práctica acumulativa y aplicación en contextos variados, aumentando gradualmente la complejidad.",
-  resources:"Preparar resúmenes, mapas conceptuales, tarjetas de repaso, ejemplos modelo y actividades autocorrectivas cuando proceda."
- },
- pace:{
-  access:"Presentar los objetivos y la secuencia de trabajo al comienzo de la actividad, haciendo visibles los pasos esenciales y los criterios de finalización.",
-  tasks:"Ajustar la cantidad de ejercicios repetitivos sin eliminar los aprendizajes esenciales. Proporcionar tiempo de práctica suficiente, pausas funcionales y apoyo gradual.",
-  resources:"Ofrecer listas de comprobación, modelos resueltos, guías de trabajo y materiales graduados en dificultad."
- },
- reading:{
-  access:"Facilitar textos legibles y bien estructurados, destacar la información relevante sin sobrecargar la página y aclarar el vocabulario imprescindible antes de la lectura.",
-  tasks:"Fragmentar textos extensos, anticipar el propósito de lectura y trabajar la identificación de ideas principales mediante preguntas graduadas y organizadores gráficos.",
-  resources:"Usar textos adaptados en presentación, audio cuando sea adecuado, glosarios, organizadores gráficos y herramientas de lectura accesible."
- },
- writing:{
-  access:"Explicitar el propósito, la estructura y los requisitos de las producciones escritas mediante modelos y ejemplos claros.",
-  tasks:"Planificar la escritura con esquemas o plantillas; permitir borradores y revisión por fases, centrando cada revisión en aspectos concretos.",
-  resources:"Proporcionar organizadores de ideas, bancos de conectores, modelos textuales, listas de revisión y herramientas digitales de apoyo cuando sean pertinentes."
- },
- oral:{
-  access:"Acompañar la información oral importante con apoyos escritos o visuales, hablar de forma clara y comprobar la comprensión de las instrucciones.",
-  tasks:"Ofrecer preparación previa para intervenciones orales, preguntas formuladas con claridad y oportunidades variadas de participación.",
-  resources:"Utilizar guiones visuales, palabras clave, ejemplos, apoyos de comunicación o sistemas alternativos/aumentativos cuando estén indicados."
- },
- vocabulary:{
-  access:"Anticipar y explicar el vocabulario específico y los símbolos necesarios, relacionándolos con ejemplos conocidos y representaciones visuales.",
-  tasks:"Incorporar actividades breves de asociación, clasificación y uso contextualizado del vocabulario antes de tareas más complejas.",
-  resources:"Elaborar glosarios visuales, diccionarios de aula, tarjetas de conceptos y murales de referencia."
- },
- attention:{
-  access:"Reducir distractores evitables, presentar una instrucción cada vez cuando sea necesario y señalar claramente la información esencial.",
-  tasks:"Organizar el trabajo en tramos manejables con objetivos próximos, comprobaciones intermedias y pausas acordadas cuando sean funcionales.",
-  resources:"Usar temporizadores visuales, listas de pasos, agendas de tarea y señales discretas acordadas con el alumno o alumna."
- },
- organization:{
-  access:"Hacer visibles las fechas, materiales necesarios, pasos y productos finales de cada tarea mediante una planificación clara.",
-  tasks:"Fragmentar trabajos extensos en entregas parciales, enseñar explícitamente cómo planificarlos y revisar periódicamente el uso de la agenda.",
-  resources:"Facilitar planificadores, listas de comprobación, calendarios, carpetas organizadas y plantillas de planificación."
- },
- autonomy:{
-  access:"Explicitar qué se espera, cómo comenzar y cómo comprobar que la tarea está terminada, manteniendo las ayudas accesibles.",
-  tasks:"Graduar la ayuda: modelado inicial, realización compartida y práctica autónoma progresiva. Reforzar estrategias de petición de ayuda y autocorrección.",
-  resources:"Proporcionar guías de inicio, ejemplos modelo, rúbricas de proceso y listas de autocomprobación."
- },
- steps:{
-  access:"Ofrecer instrucciones breves y secuenciadas, verbalmente y por escrito cuando proceda, evitando presentar demasiados pasos simultáneamente.",
-  tasks:"Presentar una fase cada vez en tareas complejas y comprobar el seguimiento antes de avanzar, retirando gradualmente la segmentación cuando sea posible.",
-  resources:"Usar secuencias numeradas, diagramas de flujo, tarjetas de pasos y demostraciones prácticas."
- },
- visual:{
-  access:"Asegurar que la información relevante se presenta en formatos perceptibles y accesibles, utilizando contraste, tamaño, organización y alternativas al canal visual cuando sean necesarias.",
-  tasks:"Ofrecer alternativas accesibles para consultar instrucciones y realizar las tareas, según las necesidades documentadas.",
-  resources:"Seleccionar los apoyos visuales, formatos accesibles, lectores de pantalla u otros productos de apoyo que correspondan al caso y a las orientaciones especializadas."
- },
- auditory:{
-  access:"Facilitar el acceso a las explicaciones orales mediante apoyos escritos, buena visibilidad del interlocutor y reducción del ruido cuando sea pertinente.",
-  tasks:"Comprobar que la información se ha recibido correctamente y ofrecer alternativas accesibles para participar en actividades basadas en información oral.",
-  resources:"Utilizar instrucciones escritas, subtitulado, sistemas de transmisión o productos de apoyo indicados para el alumno o alumna."
- },
- motor:{
-  access:"Organizar materiales, mobiliario y espacio para permitir el acceso y la participación, de acuerdo con las necesidades funcionales documentadas.",
-  tasks:"Ajustar la forma de manipular materiales o responder cuando sea necesario, manteniendo el objetivo de aprendizaje siempre que sea posible.",
-  resources:"Disponer los materiales accesibles y utilizar herramientas, dispositivos o productos de apoyo adecuados y prescritos cuando corresponda."
- },
- communication:{
-  access:"Asegurar que las consignas y las oportunidades de participación sean comprensibles y accesibles, respetando el sistema de comunicación utilizado por el alumno o alumna.",
-  tasks:"Permitir formas de respuesta y participación acordes con las necesidades comunicativas documentadas, sin reducir innecesariamente la exigencia curricular.",
-  resources:"Emplear apoyos visuales, tableros, sistemas aumentativos o alternativos de comunicación y otros recursos establecidos para el caso."
- },
- engagement:{
-  access:"Conectar las tareas con propósitos comprensibles y próximos, anticipando su duración, los pasos y los logros esperados.",
-  tasks:"Proponer metas parciales claras, actividades contextualizadas y oportunidades de elección acotada, con retroalimentación frecuente sobre el proceso.",
-  resources:"Usar paneles de progreso, listas de objetivos, ejemplos contextualizados y herramientas de autoevaluación."
- },
- attendance:{
-  access:"Facilitar una visión clara de los contenidos esenciales y de las tareas prioritarias para retomar el trabajo tras una ausencia, sin saturar de información.",
-  tasks:"Planificar una recuperación progresiva de aprendizajes imprescindibles, priorizando tareas clave y revisando las necesidades de apoyo al reincorporarse.",
-  resources:"Proporcionar un itinerario de recuperación, materiales esenciales, resúmenes y acceso a los recursos de aula disponibles."
- },
- pending:{
-  access:"Organizar los aprendizajes pendientes en bloques claros, indicando los contenidos prioritarios, los recursos y los hitos de seguimiento.",
-  tasks:"Secuenciar actividades de recuperación vinculadas a los aprendizajes no adquiridos, con práctica guiada y comprobaciones periódicas.",
-  resources:"Facilitar una guía de recuperación, actividades graduadas, ejemplos resueltos y recursos de consulta de la materia."
- },
- repeat:{
-  access:"Identificar los aprendizajes que requieren consolidación y conectarlos con los nuevos contenidos, haciendo explícitos los objetivos de cada secuencia.",
-  tasks:"Combinar recuperación de aprendizajes esenciales con tareas del curso actual, evitando repetir de forma mecánica actividades ya dominadas.",
-  resources:"Preparar itinerarios de refuerzo, materiales graduados y registros sencillos de progreso."
- },
- structure:{
-  access:"Anticipar cambios y secuencias de trabajo mediante información clara y consistente, adaptando el nivel de anticipación a las necesidades observadas.",
-  tasks:"Mantener rutinas comprensibles y hacer explícitos los cambios, ofreciendo opciones de participación y apoyos acordados cuando sean necesarios.",
-  resources:"Utilizar agendas visuales, secuencias, anticipadores y materiales de apoyo acordes con las orientaciones del equipo docente y de orientación."
- },
- enrichment:{
-  access:"Facilitar fuentes y recursos de profundización adecuados al nivel de competencia, intereses y objetivos del alumnado.",
-  tasks:"Proponer tareas abiertas, retos de mayor profundidad, investigación o transferencia a contextos nuevos, sin limitarse a aumentar la cantidad de ejercicios.",
-  resources:"Ofrecer fuentes fiables, materiales de ampliación, herramientas de investigación y recursos para proyectos o productos de mayor complejidad."
- },
- other:{
-  access:"Ajustar la presentación de la información a la necesidad concreta observada y documentada, explicitando los apoyos que facilitan el acceso al aprendizaje.",
-  tasks:"Diseñar tareas y apoyos específicos a partir de la barrera identificada, revisando su utilidad durante el proceso.",
-  resources:"Seleccionar recursos pertinentes para la necesidad descrita por el equipo docente, evitando medidas genéricas que no respondan al caso."
- }
+ comprehension:{access:"Presentar las consignas de forma clara, directa y ordenada. Comprobar la comprensión antes de iniciar la tarea y acompañar las instrucciones verbales con ejemplos o apoyos visuales cuando resulten útiles.",tasks:"Dividir las tareas complejas en pasos breves y numerados. Modelar un ejemplo inicial y comprobar la comprensión de cada fase antes de continuar.",resources:"Utilizar guías de pasos, ejemplos resueltos, esquemas y glosarios de términos específicos cuando sean pertinentes."},
+ reasoning:{access:"Hacer explícitos los datos relevantes, el objetivo de la actividad y los pasos posibles para abordarla. Apoyar la explicación con representaciones gráficas o ejemplos contextualizados.",tasks:"Proponer problemas graduados, con resolución guiada inicial y retirada progresiva de las ayudas. Incorporar actividades que permitan explicar el procedimiento seguido.",resources:"Facilitar plantillas para organizar datos, esquemas de resolución, material manipulativo o herramientas digitales adecuadas a la tarea."},
+ consolidation:{access:"Activar conocimientos previos y relacionar los nuevos contenidos con ejemplos conocidos. Presentar la información esencial de manera organizada y recuperar las ideas clave durante la unidad.",tasks:"Incluir actividades breves de repaso distribuido, práctica acumulativa y aplicación en contextos variados, aumentando gradualmente la complejidad.",resources:"Preparar resúmenes, mapas conceptuales, tarjetas de repaso, ejemplos modelo y actividades autocorrectivas cuando proceda."},
+ pace:{access:"Presentar los objetivos y la secuencia de trabajo al comienzo de la actividad, haciendo visibles los pasos esenciales y los criterios de finalización.",tasks:"Ajustar la cantidad de ejercicios repetitivos sin eliminar los aprendizajes esenciales. Proporcionar tiempo de práctica suficiente, pausas funcionales y apoyo gradual.",resources:"Ofrecer listas de comprobación, modelos resueltos, guías de trabajo y materiales graduados en dificultad."},
+ reading:{access:"Facilitar textos legibles y bien estructurados, destacar la información relevante sin sobrecargar la página y aclarar el vocabulario imprescindible antes de la lectura.",tasks:"Fragmentar textos extensos, anticipar el propósito de lectura y trabajar la identificación de ideas principales mediante preguntas graduadas y organizadores gráficos.",resources:"Usar textos adaptados en presentación, audio cuando sea adecuado, glosarios, organizadores gráficos y herramientas de lectura accesible."},
+ writing:{access:"Explicitar el propósito, la estructura y los requisitos de las producciones escritas mediante modelos y ejemplos claros.",tasks:"Planificar la escritura con esquemas o plantillas; permitir borradores y revisión por fases, centrando cada revisión en aspectos concretos.",resources:"Proporcionar organizadores de ideas, bancos de conectores, modelos textuales, listas de revisión y herramientas digitales de apoyo cuando sean pertinentes."},
+ oral:{access:"Acompañar la información oral importante con apoyos escritos o visuales, hablar de forma clara y comprobar la comprensión de las instrucciones.",tasks:"Ofrecer preparación previa para intervenciones orales, preguntas formuladas con claridad y oportunidades variadas de participación.",resources:"Utilizar guiones visuales, palabras clave, ejemplos, apoyos de comunicación o sistemas alternativos/aumentativos cuando estén indicados."},
+ vocabulary:{access:"Anticipar y explicar el vocabulario específico y los símbolos necesarios, relacionándolos con ejemplos conocidos y representaciones visuales.",tasks:"Incorporar actividades breves de asociación, clasificación y uso contextualizado del vocabulario antes de tareas más complejas.",resources:"Elaborar glosarios visuales, diccionarios de aula, tarjetas de conceptos y murales de referencia."},
+ attention:{access:"Reducir distractores evitables, presentar una instrucción cada vez cuando sea necesario y señalar claramente la información esencial.",tasks:"Organizar el trabajo en tramos manejables con objetivos próximos, comprobaciones intermedias y pausas acordadas cuando sean funcionales.",resources:"Usar temporizadores visuales, listas de pasos, agendas de tarea y señales discretas acordadas con el alumno o alumna."},
+ organization:{access:"Hacer visibles las fechas, materiales necesarios, pasos y productos finales de cada tarea mediante una planificación clara.",tasks:"Fragmentar trabajos extensos en entregas parciales, enseñar explícitamente cómo planificarlos y revisar periódicamente el uso de la agenda.",resources:"Facilitar planificadores, listas de comprobación, calendarios, carpetas organizadas y plantillas de planificación."},
+ autonomy:{access:"Explicitar qué se espera, cómo comenzar y cómo comprobar que la tarea está terminada, manteniendo las ayudas accesibles.",tasks:"Graduar la ayuda: modelado inicial, realización compartida y práctica autónoma progresiva. Reforzar estrategias de petición de ayuda y autocorrección.",resources:"Proporcionar guías de inicio, ejemplos modelo, rúbricas de proceso y listas de auto comprobación."},
+ steps:{access:"Ofrecer instrucciones breves y secuenciadas, verbalmente y por escrito cuando proceda, evitando presentar demasiados pasos simultáneamente.",tasks:"Presentar una fase cada vez en tareas complejas y comprobar el seguimiento antes de avanzar, retirando gradualmente la segmentación cuando sea posible.",resources:"Usar secuencias numeradas, diagramas de flujo, tarjetas de pasos y demostraciones prácticas."},
+ visual:{access:"Asegurar que la información relevante se presenta en formatos perceptibles y accesibles, utilizando contraste, tamaño, organización y alternativas al canal visual cuando sean necesarias.",tasks:"Ofrecer alternativas accesibles para consultar instrucciones y realizar las tareas, según las necesidades documentadas.",resources:"Seleccionar los apoyos visuales, formatos accesibles, lectores de pantalla u otros productos de apoyo que correspondan al caso y a las orientaciones especializadas."},
+ auditory:{access:"Facilitar el acceso a las explicaciones orales mediante apoyos escritos, buena visibilidad del interlocutor y reducción del ruido cuando sea pertinente.",tasks:"Comprobar que la información se ha recibido correctamente y ofrecer alternativas accesibles para participar en actividades basadas en información oral.",resources:"Utilizar instrucciones escritas, subtitulado, sistemas de transmisión o productos de apoyo indicados para el alumno o alumna."},
+ motor:{access:"Organizar materiales, mobiliario y espacio para permitir el acceso y la participación, de acuerdo con las necesidades funcionales documentadas.",tasks:"Ajustar la forma de manipular materiales o responder cuando sea necesario, manteniendo el objetivo de aprendizaje siempre que sea posible.",resources:"Disponer los materiales accesibles y utilizar herramientas, dispositivos o productos de apoyo adecuados y prescritos cuando corresponda."},
+ communication:{access:"Asegurar que las consignas y las oportunidades de participación sean comprensibles y accesibles, respetando el sistema de comunicación utilizado por el alumno o alumna.",tasks:"Permitir formas de respuesta y participación acordes con las necesidades comunicativas documentadas, sin reducir innecesariamente la exigencia curricular.",resources:"Emplear apoyos visuales, tableros, sistemas aumentativos o alternativos de comunicación y otros recursos establecidos para el caso."},
+ engagement:{access:"Conectar las tareas con propósitos comprensibles y próximos, anticipando su duración, los pasos y los logros esperados.",tasks:"Proponer metas parciales claras, actividades contextualizadas y oportunidades de elección acotada, con retroalimentación frecuente sobre el proceso.",resources:"Usar paneles de progreso, listas de objetivos, ejemplos contextualizados y herramientas de autoevaluación."},
+ attendance:{access:"Facilitar una visión clara de los contenidos esenciales y de las tareas prioritarias para retomar el trabajo tras una ausencia, sin saturar de información.",tasks:"Planificar una recuperación progresiva de aprendizajes imprescindibles, priorizando tareas clave y revisando las necesidades de apoyo al reincorporarse.",resources:"Proporcionar un itinerario de recuperación, materiales esenciales, resúmenes y acceso a los recursos de aula disponibles."},
+ pending:{access:"Organizar los aprendizajes pendientes en bloques claros, indicando los contenidos prioritarios, los recursos y los hitos de seguimiento.",tasks:"Secuenciar actividades de recuperación vinculadas a los aprendizajes no adquiridos, con práctica guiada y comprobaciones periódicas.",resources:"Facilitar una guía de recuperación, actividades graduadas, ejemplos resueltos y recursos de consulta de la materia."},
+ repeat:{access:"Identificar los aprendizajes que requieren consolidación y conectarlos con los nuevos contenidos, haciendo explícitos los objetivos de cada secuencia.",tasks:"Combinar recuperación de aprendizajes esenciales con tareas del curso actual, evitando repetir de forma mecánica actividades ya dominadas.",resources:"Preparar itinerarios de refuerzo, materiales graduados y registros sencillos de progreso."},
+ structure:{access:"Anticipar cambios y secuencias de trabajo mediante información clara y consistente, adaptando el nivel de anticipación a las necesidades observadas.",tasks:"Mantener rutinas comprensibles y hacer explícitos los cambios, ofreciendo opciones de participación y apoyos acordados cuando sean necesarios.",resources:"Utilizar agendas visuales, secuencias, anticipadores y materiales de apoyo acordes con las orientaciones del equipo docente y de orientación."},
+ enrichment:{access:"Facilitar fuentes y recursos de profundización adecuados al nivel de competencia, intereses y objetivos del alumnado.",tasks:"Proponer tareas abiertas, retos de mayor profundidad, investigación o transferencia a contextos nuevos, sin limitarse a aumentar la cantidad de ejercicios.",resources:"Ofrecer fuentes fiables, materiales de ampliación, herramientas de investigación y recursos para proyectos o productos de mayor complejidad."},
+ other:{access:"Ajustar la presentación de la información a la necesidad concreta observada y documentada, explicitando los apoyos que facilitan el acceso al aprendizaje.",tasks:"Diseñar tareas y apoyos específicos a partir de la barrera identificada, revisando su utilidad durante el proceso.",resources:"Seleccionar recursos pertinentes para la necesidad descrita por el equipo docente, evitando medidas genéricas que no respondan al caso."}
 };
-
-const fieldNames=[
+const fieldNames = [
  ["access","Formas de acceso a la información"],
  ["tasks","Tipos de actividades y tareas"],
  ["resources","Recursos didácticos"],
  ["grouping","Agrupamientos, distribución de espacios y tiempos"],
  ["assessment","Instrumentos de evaluación"]
 ];
-
 function renderCategories(){
  const root=document.getElementById("categories");
- root.innerHTML=categories.map(cat=>`
-  <div class="category">
-   <h3>${cat.title}</h3>
-   ${cat.items.map(([id,label])=>`
-    <label class="check">
-     <input type="checkbox" data-id="${id}">
-     <span>${label}</span>
-    </label>
-   `).join("")}
-  </div>
- `).join("");
+ root.innerHTML=categories.map((cat,i)=>`<div class="category"><h3>${cat.title}</h3>${cat.items.map(([id,label])=>`<label class="check"><input type="checkbox" data-id="${id}"><span>${label}</span></label>`).join("")}</div>`).join("");
  root.querySelectorAll("input").forEach(x=>x.addEventListener("change",updateCount));
 }
-
-function selectedIds(){
- return [...document.querySelectorAll("#categories input:checked")]
-  .map(x=>x.dataset.id);
-}
-
-function updateCount(){
- const n=selectedIds().length;
- document.getElementById("selectedCount").textContent=
-  `${n} ${n===1?"necesidad seleccionada":"necesidades seleccionadas"}`;
-}
-
-function uniqueSentences(parts){
- const seen=new Set();
- return parts.filter(Boolean).map(x=>x.trim()).filter(x=>{
-  const key=x.toLocaleLowerCase("es");
-  if(seen.has(key))return false;
-  seen.add(key);
-  return true;
- });
-}
-
+function selectedIds(){return [...document.querySelectorAll('#categories input:checked')].map(x=>x.dataset.id)}
+function updateCount(){let n=selectedIds().length;document.getElementById("selectedCount").textContent=`${n} ${n===1?'necesidad seleccionada':'necesidades seleccionadas'}`}
+function uniqueSentences(parts){let seen=new Set();return parts.filter(Boolean).map(x=>x.trim()).filter(x=>{let k=x.toLocaleLowerCase('es');if(seen.has(k))return false;seen.add(k);return true})}
 function buildText(){
- const ids=selectedIds();
- const context=document.getElementById("context").value.trim();
+ const ids=selectedIds(), context=document.getElementById("context").value.trim(), subject=document.getElementById("subject").value.trim();
  const texts={access:[],tasks:[],resources:[],grouping:[],assessment:[]};
-
- ids.forEach(id=>{
-  const measure=measureText[id];
-  if(!measure)return;
-  ["access","tasks","resources"].forEach(key=>{
-   texts[key].push(measure[key]);
-  });
- });
-
- const has=(...keys)=>keys.some(key=>ids.includes(key));
-
- if(has("attention","organization","autonomy","steps")){
-  texts.grouping.push(
-   "Ubicar al alumno o alumna en un lugar que facilite el seguimiento de las explicaciones y la supervisión discreta, siempre que resulte beneficioso. Acordar comprobaciones breves y organizar el tiempo en tramos manejables."
-  );
- }
-
- if(has("visual","auditory","motor","communication")){
-  texts.grouping.push(
-   "Asegurar que el espacio, la disposición de los materiales y los canales de comunicación permitan el acceso y la participación, aplicando los ajustes de acceso que correspondan según las necesidades documentadas."
-  );
- }
-
- if(has("reading","writing","reasoning","pace","consolidation","pending","repeat","attendance")){
-  texts.grouping.push(
-   "Ofrecer tiempo de trabajo flexible cuando esté justificado, anticipar los hitos de la tarea y facilitar agrupamientos flexibles que permitan apoyo entre iguales sin sustituir la participación propia."
-  );
- }
-
- if(!texts.grouping.length){
-  texts.grouping.push(
-   "Organizar agrupamientos flexibles y una ubicación que facilite la participación, el seguimiento de las explicaciones y la ayuda docente cuando sea necesaria. Ajustar los tiempos de trabajo a la tarea y a las necesidades observadas."
-  );
- }
-
- if(has("reading","writing","oral","communication","visual","auditory")){
-  texts.assessment.push(
-   "Presentar las consignas de evaluación de forma clara y accesible y permitir, cuando proceda y esté justificado, distintas formas de respuesta que permitan evidenciar el aprendizaje evaluado. Los ajustes no deben alterar los criterios de evaluación establecidos."
-  );
- }
-
- if(has("attention","organization","pace","consolidation","pending","repeat","attendance")){
-  texts.assessment.push(
-   "Recoger evidencias variadas durante el proceso mediante observación sistemática, revisión de tareas, actividades prácticas y comprobaciones breves. Informar de los objetivos y criterios y ofrecer retroalimentación que permita mejorar."
-  );
- }
-
- if(!texts.assessment.length){
-  texts.assessment.push(
-   "Combinar, según los criterios de evaluación y las características de la materia, observación del trabajo, revisión de producciones, actividades prácticas y pruebas u otras tareas de comprobación. Utilizar instrumentos claros y coherentes con los aprendizajes que se pretende valorar."
-  );
- }
-
- Object.keys(texts).forEach(key=>{
-  texts[key]=uniqueSentences(texts[key]);
- });
-
- const suffix=context
-  ?"\n\nMatiz que debe concretar el docente: "+context
-  :"";
-
- return fieldNames.map(([key,title])=>({
-  key,title,text:texts[key].join("\n\n")+suffix
- }));
+ ids.forEach(id=>{let m=measureText[id];if(!m)return;["access","tasks","resources"].forEach(k=>texts[k].push(m[k]))});
+ if(!ids.length){return null}
+ const has=(...keys)=>keys.some(k=>ids.includes(k));
+ if(has("attention","organization","autonomy","steps"))texts.grouping.push("Ubicar al alumno o alumna en un lugar que facilite el seguimiento de las explicaciones y la supervisión discreta, siempre que resulte beneficioso. Acordar comprobaciones breves y organizar el tiempo en tramos manejables.");
+ if(has("visual","auditory","motor","communication"))texts.grouping.push("Asegurar que el espacio, la disposición de los materiales y los canales de comunicación permitan el acceso y la participación, aplicando los ajustes de acceso que correspondan según las necesidades documentadas.");
+ if(has("reading","writing","reasoning","pace","consolidation","pending","repeat","attendance"))texts.grouping.push("Ofrecer tiempo de trabajo flexible cuando esté justificado, anticipar los hitos de la tarea y facilitar agrupamientos flexibles que permitan apoyo entre iguales sin sustituir la participación propia.");
+ if(!texts.grouping.length)texts.grouping.push("Organizar agrupamientos flexibles y una ubicación que facilite la participación, el seguimiento de las explicaciones y la ayuda docente cuando sea necesaria. Ajustar los tiempos de trabajo a la tarea y a las necesidades observadas.");
+ if(has("reading","writing","oral","communication","visual","auditory"))texts.assessment.push("Presentar las consignas de evaluación de forma clara y accesible y permitir, cuando proceda y esté justificado, distintas formas de respuesta que permitan evidenciar el aprendizaje evaluado. Los ajustes no deben alterar los criterios de evaluación establecidos.");
+ if(has("attention","organization","pace","consolidation","pending","repeat","attendance"))texts.assessment.push("Recoger evidencias variadas durante el proceso mediante observación sistemática, revisión de tareas, actividades prácticas y comprobaciones breves. Informar de los objetivos y criterios y ofrecer retroalimentación que permita mejorar.");
+ if(!texts.assessment.length)texts.assessment.push("Combinar, según los criterios de evaluación y las características de la materia, observación del trabajo, revisión de producciones, actividades prácticas y pruebas u otras tareas de comprobación. Utilizar instrumentos claros y coherentes con los aprendizajes que se pretende valorar.");
+ const labels={access:"Formas de acceso a la información",tasks:"Tipos de actividades y tareas",resources:"Recursos didácticos",grouping:"Agrupamientos, distribución de espacios y tiempos",assessment:"Instrumentos de evaluación"};
+ Object.keys(texts).forEach(k=>{texts[k]=uniqueSentences(texts[k])});
+ const suffix=context?`\n\nMatiz que debe concretar el docente: ${context}`:"";
+ return fieldNames.map(([key,title])=>({key,title,text:texts[key].join("\n\n")+suffix}));
 }
-
-function escapeHtml(value){
- return value.replace(/&/g,"&amp;")
-  .replace(/</g,"&lt;")
-  .replace(/>/g,"&gt;");
-}
-
 function generate(){
- const data=buildText();
- const output=document.getElementById("outputs");
-
- if(!data){
-  output.innerHTML='<div class="empty">Selecciona al menos una necesidad para generar los campos.</div>';
-  return;
- }
-
- output.innerHTML=data.map((field,index)=>`
-  <article class="field">
-   <div class="fieldhead">
-    <div>
-     <h3>${index+1}. ${field.title}</h3>
-     <p>Texto orientativo editable · revisa antes de copiar</p>
-    </div>
-    <button class="smallbtn no-print" data-copy="${field.key}">Copiar campo</button>
-   </div>
-   <textarea aria-label="${field.title}" data-field="${field.key}">${escapeHtml(field.text)}</textarea>
-  </article>
- `).join("");
-
- output.querySelectorAll("[data-copy]").forEach(button=>{
-  button.addEventListener("click",()=>{
-   const field=output.querySelector(`[data-field="${button.dataset.copy}"]`);
-   copyText(field.value);
-  });
- });
-
- document.getElementById("status").textContent=
-  "Propuesta generada. Revisa y edita cada campo antes de copiarlo.";
+ const data=buildText(),out=document.getElementById("outputs");
+ if(!data){out.innerHTML='<div class="empty">Selecciona al menos una necesidad para generar los campos.</div>';return}
+ out.innerHTML=data.map((f,i)=>`<article class="field"><div class="fieldhead"><div><h3>${i+1}. ${f.title}</h3><p>Texto orientativo editable · revisa antes de copiar</p></div><button class="smallbtn no-print" data-copy="${f.key}">Copiar campo</button></div><textarea aria-label="${f.title}" data-field="${f.key}">${escapeHtml(f.text)}</textarea></article>`).join("");
+ out.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",()=>copyText(out.querySelector(`[data-field="${b.dataset.copy}"]`).value)));
+ document.getElementById("status").textContent="Propuesta generada. Revisa y edita cada campo antes de copiarlo.";
 }
-
+function escapeHtml(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
 async function copyText(text){
- const status=document.getElementById("status");
-
- try{
-  await navigator.clipboard.writeText(text);
-  status.textContent="Texto copiado al portapapeles.";
- }catch(error){
-  const temporary=document.createElement("textarea");
-  temporary.value=text;
-  document.body.appendChild(temporary);
-  temporary.select();
-
-  try{
-   document.execCommand("copy");
-   status.textContent="Texto copiado al portapapeles.";
-  }catch(fallbackError){
-   status.textContent="No se pudo copiar automáticamente. Selecciona y copia el texto manualmente.";
-  }
-  temporary.remove();
- }
+ try{await navigator.clipboard.writeText(text);document.getElementById("status").textContent="Texto copiado al portapapeles."}
+ catch(e){const t=document.createElement("textarea");t.value=text;document.body.appendChild(t);t.select();try{document.execCommand("copy");document.getElementById("status").textContent="Texto copiado al portapapeles."}catch(_){document.getElementById("status").textContent="No se pudo copiar automáticamente. Selecciona y copia el texto manualmente."}t.remove()}
 }
-
 document.getElementById("generate").addEventListener("click",generate);
-
-document.getElementById("clear").addEventListener("click",()=>{
- document.querySelectorAll("#categories input").forEach(input=>{
-  input.checked=false;
+document.getElementById("clear").addEventListener("click",()=>{document.querySelectorAll('#categories input').forEach(x=>x.checked=false);updateCount();document.getElementById("outputs").innerHTML='<div class="empty">Selección limpiada. Marca las necesidades y genera los campos.</div>';document.getElementById("status").textContent=""});
+document.getElementById("copyAll").addEventListener("click",()=>{const fields=[...document.querySelectorAll("[data-field]")];if(!fields.length){document.getElementById("status").textContent="Primero genera los campos.";return}copyText(fields.map(t=>fieldNames.find(f=>f[0]===t.dataset.field)[1].toUpperCase()+"\n"+t.value).join("\n\n------------------------------\n\n"))});
+document.getElementById("print").addEventListener("click",()=>window.print());
+function fitTextareasForPrint(){
+ document.querySelectorAll("#outputs textarea").forEach(textarea=>{
+  textarea.dataset.originalHeight=textarea.style.height||"";
+  textarea.style.height="auto";
+  textarea.style.height=textarea.scrollHeight+"px";
  });
- updateCount();
- document.getElementById("outputs").innerHTML=
-  '<div class="empty">Selección limpiada. Marca las necesidades y genera los campos.</div>';
- document.getElementById("status").textContent="";
+}
+function restoreTextareasAfterPrint(){
+ document.querySelectorAll("#outputs textarea").forEach(textarea=>{
+  textarea.style.height=textarea.dataset.originalHeight||"";
+  delete textarea.dataset.originalHeight;
+ });
+}
+window.addEventListener("beforeprint",fitTextareasForPrint);
+window.addEventListener("afterprint",restoreTextareasAfterPrint);
+const guideDialog=document.getElementById("guideDialog");
+document.getElementById("guideButton").addEventListener("click",()=>{
+ if(typeof guideDialog.showModal==="function") guideDialog.showModal();
+ else alert("Guía de uso: selecciona las necesidades observadas, genera los cinco campos, revisa los textos y cópialos a Séneca. No incluyas datos identificativos y valida siempre las propuestas.");
 });
-
-document.getElementById("copyAll").addEventListener("click",()=>{
- const fields=[...document.querySelectorAll("[data-field]")];
-
- if(!fields.length){
-  document.getElementById("status").textContent="Primero genera los campos.";
-  return;
- }
-
- copyText(fields.map(field=>{
-  const title=fieldNames.find(item=>item[0]===field.dataset.field)[1];
-  return title.toUpperCase()+"\n"+field.value;
- }).join("\n\n------------------------------\n\n"));
+document.getElementById("closeGuide").addEventListener("click",()=>guideDialog.close());
+guideDialog.addEventListener("click",event=>{
+ if(event.target===guideDialog) guideDialog.close();
 });
-
-document.getElementById("print").addEventListener("click",()=>{
- window.print();
-});
-
-renderCategories();
-updateCount();
+renderCategories();updateCount();
 </script>
 </body>
 </html>
